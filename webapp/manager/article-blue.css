@@ -1,0 +1,728 @@
+/**
+    article-blue.css
+     Time-stamp: <2009-03-06 21:58:20 sakurai>
+    modified by SAKURAI, Masashi (m.sakurai@cmt.phys.kyushu-u.ac.jp)
+
+
+    original [article.css]
+
+    since   : Nov. 21, 1998
+    version : Mar. 11, 2000
+    author  : ASAMI, Tomoharu (tasami@ibm.net)
+*/
+
+
+A:link {
+    color: blue;
+}
+
+A:visited {
+    color: purple;
+}
+
+A:hover{
+    color: gold;
+};
+
+/**
+    << HTML text data >>
+*/
+
+body {
+       margin-left: 1em;
+
+       background: white;
+       color: #444444;
+       font-family: Arial,Helvetica,sans-serif;
+       font-size: 9px;
+       line-height: 130%;
+}
+
+p {
+    margin-bottom: 0.5em;
+    margin-top: 0em;
+    margin-left: 0pt;
+    margin-right: 0pt;
+
+    text-indent: 1em;
+}
+
+h1 {
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+h1.title {
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    border-style: solid;
+    border-color: lightgray;
+
+    padding: 10pt;
+
+    color: #333366;
+    background: #f8f8ff;
+    text-align: center;
+}
+
+h1.part {
+    border-style: solid;
+    border-color: #lightgray;
+
+    padding: 10px;
+
+    color: #808088;
+    background: #d0ccff;
+    font-family: Arial,Helvetica,sans-serif;
+    text-align: center;
+}
+
+h1.chapter {
+    padding: 10px;
+
+     border-style: solid;
+    border-color: lightgray;
+
+    color: #223399;
+    background: #f0f0ff;
+    text-align: left;
+}
+
+h2 {
+    margin-top: 2em;
+
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+
+    border-style: dotted;
+    border-color: lightgray;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 4px;
+
+    background-color: #f0f0ff;
+    color: #3333bb;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 150%;
+}
+
+h3 {
+    margin-left: 0.5em;
+    margin-top:    2em;
+
+    padding:     7px;
+
+    border-color:     lightgray;
+    border-style:     solid;
+    border-left-width:     20px;
+    border-bottom-width:     1px;
+    border-top-width:    0px;
+    border-right-width:    0px;
+
+    color:    gray;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold;
+
+    font-size:    140%;
+}
+
+h4 {
+    margin-top: 1.5em;
+    margin-left:16px;
+
+    border-color:     lightgray;
+    border-style:     dashed;
+    border-left-width:     0px;
+    border-bottom-width:     1px;
+    border-top-width:    0px;
+    border-right-width:    0px;
+
+    color: #8080ff;
+    font-size: 130%;
+    font-family: serif, times;
+    font-style: italic;
+
+    line-height:110%;
+}
+
+dfn {
+    color: blue;
+    font-family: Arial,Helvetica,sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+code {
+    font-size:    100%;
+    font-family: Monospace, Courier, sans-serif;
+    font-weight: normal;
+    font-style:    normal;
+    color: darkblue;
+}
+
+em {
+    color: black;
+    font-family: Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:bold;
+}
+strong {
+    color: black;
+    font-family: Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:bold;
+}
+
+
+blockquote {
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+
+    border: 1pt dashed lightgray;
+
+    padding: 5pt;
+
+    color: #666677;
+    background: #ffffd0;
+}
+
+li {
+    color: #223344;
+    font-family: Arial,Helvetica,sans-serif;
+    text-indent: 0pt;
+    margin-left:2em;
+    margin-top:     0.3em;
+    margin-bottom:     0.3em;
+}
+
+ul ul li {
+    margin-left:0em;
+}
+
+ol ul li {
+    margin-left:0em;
+}
+
+ol ol li {
+    margin-left:0em;
+}
+
+ul ol li {
+    margin-left:0em;
+}
+
+dl ul li {
+    margin-left:0em;
+}
+
+dl ul li {
+    margin-left:0em;
+}
+
+
+
+ul ul ul {
+    border-color:     #aaccff;
+    border-style:     dotted;
+    border-left-width:     2px;
+    border-bottom-width:     0px;
+    border-top-width:    0px;
+    border-right-width:    0px;
+    margin-bottom:    7pt;
+    margin-right:    30px;
+}
+
+ul ul ul ul {
+    border-color:     #cceeff;
+    background: #f0f0f0;
+    margin-right:    20px;
+}
+
+ul ul ul ul ul {
+    border-color:     #cceeff;
+    background: #e8e8e8;
+    margin-right:    10px;
+}
+
+dd {
+    margin-left:3em;
+    margin-top:0.8em;
+
+    color: #333333;
+    line-height:130%;
+}
+dt {
+    color: #5555ff; 
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight:bold;
+
+    margin-top:16px;
+    margin-left:2em;
+    margin-bottom: 1em
+
+    border-color: #e0e0e0;
+    border-color: #e0e0e0;
+    border-style: solid;
+    border-left-width: 1em;
+    border-bottom-width: 0px;
+    border-top-width: 0px;
+    border-right-width:    0px;
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+}
+
+th p {
+    text-indent: 0pt;
+}
+
+td p {
+    text-indent: 0pt;
+}
+
+/** #############################
+    << TABLE data >>
+*/
+
+div.table {
+    text-align: center;
+}
+
+table.data {
+    text-align: justify;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10pt;
+
+    background-color: #f0f0ff;
+    border: 1pt solid blue;
+}
+
+table.data caption {
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #e0e0ff;
+    color: #444499;
+    font-weight: bold;
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 4px;
+}
+
+table.data th {
+    color: white;
+    background-color: #6666ee;
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 4px;
+}
+
+table.data td {
+    background-color: #f0f0ff;
+
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-left-style: dashed;
+    border-color: #bbbbbb;
+
+    padding: 4px;
+}
+
+table.data td.mouseover {
+    background-color: #fff6e0;
+
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-left-style: dashed;
+    border-color: #bbbbbb;
+
+    padding: 4px;
+}
+
+table.data td.select {
+    background-color: #ffe0e0;
+
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-left-style: dashed;
+    border-color: #bbbbbb;
+
+    padding: 4px;
+}
+
+table.data td.key {
+    background-color: #ffe0e0;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold;
+}
+
+
+/** #############################
+    << MENU data >>
+*/
+
+table.menu {
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+    text-align: center;
+}
+
+table.menu caption {
+    background-color: #fffff8;
+    font-weight: bold;
+}
+
+table.menu th {
+    color: yellow;
+    background-color: lightseagreen;
+}
+
+table.menu td {
+    color: Maroon;
+    background-color: antiquewhite;
+    font-weight: bold;
+    padding: 10pt;
+}
+
+table.menu td.key {
+    font-size: x-large;
+    color: RoyalBlue;
+    background-color: LightGreen;
+    font-weight: bold;
+    padding: 10pt;
+}
+
+table.menu td.key A:link {
+    color: RoyalBlue;
+}
+
+table.menu td.key A:visited {
+    color: RoyalBlue;
+}
+
+/** #############################
+    << NAVIGATOR data >>
+*/
+
+table.navigator {
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.navigator td {
+    text-align: center;
+    font-weight: bold;
+}
+
+div.navigator {
+    background: #f8f8ff;
+    border: 1pt solid blue;
+    text-align: center;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+}
+
+div.navigatortop {
+    background: #f8f8ff;
+    border: 1pt solid blue;
+    text-align: center;
+    margin-bottom: 10pt;
+}
+
+div.navigatorbottom {
+    background: #f8f8ff;
+    border: 1pt solid blue;
+    text-align: center;
+    margin-top: 10pt;
+}
+
+/** #############################
+    << LANGUAGE data >>
+*/
+
+table.languages {
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+  font-size: x-small;
+  position: absolute;
+  right: 0pt;
+}
+
+table.languages td.current {
+}
+
+table.languages td.other {
+    background-color: Orange;
+}
+
+div.languages {
+    text-align: right;
+}
+
+/** #############################
+    << TABLE OF CONTENTS data >>
+*/
+
+div.toc {
+    background-color: #f8f8f8;
+    padding: 10pt;
+    border-style: solid;
+    border-color: gray;
+    margin-top: 10pt;
+    margin-bottom: 30pt;
+}
+
+div.titletoc {
+    background-color: #f8f8f8;
+    padding: 10pt;
+    border-style: solid;
+    border-color: gray;
+    margin-top: 10pt;
+    margin-bottom: 30pt;
+}
+
+
+/**  #############################
+    TITLE data
+*/
+
+div.title {
+    text-align: center;
+}
+
+div.date {
+    text-align: center;
+}
+
+div.author {
+    text-align: center;
+    font-weight: bold;
+}
+
+div.org {
+    text-align: center;
+    font-weight: bold;
+}
+
+div.email {
+    text-align: center;
+}
+
+div.hp {
+    text-align: center;
+}
+
+div.summary {
+    color: #444444;
+    background: #f0f0ff;
+    border-style: dotted;
+    border-color: #cccccc;
+    margin-top: 20pt;
+    margin-bottom: 20pt;
+    margin-left: 30pt;
+    margin-right: 30pt;
+    padding: 5pt;
+}
+
+div.comment {
+    color: red;
+    background: yellow;
+}
+
+div.footnote {
+    background: antiquewhite;
+}
+
+div.fyi {
+    color: maroon;
+    background: peachpuff;
+    padding: 5pt;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+}
+
+div.fyi div.title {
+    background: antiquewhite;
+    font-weight: bold;
+    padding: 5pt;
+    margin-top: 5pt;
+    margin-bottom: 5pt;
+}
+
+div.result {
+    background: ivory;
+    border-style: inset;
+    border-color: gold;
+    padding: 10pt;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+}
+
+div.caption {
+    border-style:     solid;
+    border-top-width: 4px;
+    border-left-width: 0px;
+    border-bottom-width: 4px;
+    border-right-width: 0px;
+    border-top-color: #eaeaff;
+    border-bottom-color: #d0d0ff;
+    background: #e0e0ff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 80%;
+    margin-top: 1em;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left:     8px;
+    padding-right:     0px;
+}
+
+span.caption {
+    background: lavender;
+    font-weight: bold;
+}
+
+/** #############################
+    PROGRAM data
+*/
+
+pre.program {
+/*    margin-left:    40px;
+    margin-right:    40px; */
+    color:black;
+/*    background-color: #f8f8ff; */
+    background-color: cornsilk;
+    font-family: courier, monospace;
+    padding: 5pt;
+
+    border-color:     #aaaaaa;
+    border-style:     dashed;
+    border-width: 1px;
+}
+
+pre.program em {
+    color:         red;
+    background-color: yellow;
+    font-style:     normal;
+}
+
+span.keyword {
+    font-style:     normal;
+    color:        #e033e0;
+}
+
+span.comment {
+    color:         red;
+    font-style:    italic;
+}
+
+span.primitive {
+    font-style:     normal;
+    color:         green;
+}
+
+span.quote {
+    font-style:     normal;
+    color:         #808000;
+}
+
+var {
+    font-style:     italic;
+    color:         black;
+}
+
+tt {
+    font-family: courier, monospace;
+}
+
+code {
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold;
+}
+
+pre {
+    font-family: Arial,Helvetica,sans-serif;
+    background-color: #f8f8ff; 
+    border-color: black; 
+/*    margin-left:    40px;
+    margin-right:    40px; */
+}
+
+/** #############################
+    CONSOLE data
+*/
+
+pre.console {
+/*    margin-left:    40px;
+    margin-right:    40px; */
+    background-color: black;
+    color: white;
+    font-family: courier, monospace;
+    padding: 5pt;
+}
+
+pre.console kbd {
+    font-family: courier, monospace;
+    color: yellow;
+}
+
+/** #############################
+    FIGURE data
+*/
+
+span.toggle {
+    font-weight: bold;
+}
+
+div.figure {
+    margin-top: 12pt;
+    text-align: center;
+}
+
+img.figure {
+    margin-top: 0px;
+    margin-bottom: 10pt;
+    padding: 4px;
+    border-color:     #d0d0d0;
+    border-style:     dashed;
+    border-width: 1px;
+}
+
+div.sheet {
+    margin-top: 0px;
+    margin-bottom: 10pt;
+    padding: 4px;
+    border-color:     #d0d0d0;
+    border-style:     dashed;
+    border-width: 1px;
+    text-align: center;
+}
+
+/**  #############################
+    ORIGIRNAL class
+*/
+.maxwidth {
+    align:center;
+    width:96%;
+    border:0pt;
+}

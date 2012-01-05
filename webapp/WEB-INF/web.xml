@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+  xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+  version="2.4">
+
+  <servlet>
+    <servlet-name>cont_servlet</servlet-name>
+    <servlet-class>kiwanami.web.cont.ContinuationServlet</servlet-class>
+
+    <!-- スレッド回収時間：オプション
+    スレッド回収の時間（単位:分）
+    デフォルトは60分。
+    -->
+    <!--
+    <init-param>
+      <param-name>session_time</param-name>
+      <param-value>5</param-value>
+    </init-param>
+    -->
+
+    <!-- 最大セッション数：オプション
+    デフォルトは1000。
+    -->
+    <!--
+    <init-param>
+      <param-name>max</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    -->
+
+    <!-- セッションパス：オプション
+    継続中のセッションを受け付けるパス。
+    デフォルトは session 。変更する場合は、mapping の設定も変更すること。
+    -->
+    <!--
+    <init-param>
+      <param-name>session_path</param-name>
+      <param-value>session</param-value>
+    </init-param>
+    -->
+
+    <!-- エラーページ：オプション
+    セッションでキャッチされないエラーが発生したときに、表示する画面。
+    requestの属性「error_code」にエラーコードが入っているので、
+    後でログで確認できる。dispatch させるので、コンテキスト内のパス。
+    デフォルトは内部で適当にページを生成する。
+    -->
+    <!--
+    <init-param>
+      <param-name>error</param-name>
+      <param-value>error.jsp</param-value>
+    </init-param>
+    -->
+
+    <!-- しばらくお待ちくださいページ：オプション
+    セッション数がいっぱいの時に表示するページ。
+    dispatch するのでコンテキスト内のパス。
+    デフォルトは内部で適当にページを生成する。
+    -->
+    <!--
+    <init-param>
+      <param-name>wait</param-name>
+      <param-value>wait.jsp</param-value>
+    </init-param>
+    -->
+
+    <!-- デフォルトページ：オプション
+    モジュールの指定無かったり、指定されたモジュールが存在しないときに
+    表示させる画面。redirectするので、パスはサーバーからのパス。
+    デフォルトはサーバーのルート。
+    -->
+    <!--
+    <init-param>
+      <param-name>welcome</param-name>
+      <param-value>/cont/welcome.html</param-value>
+    </init-param>
+    -->
+
+    <!-- スクリプトパス：オプション
+    スクリプトモジュールがスクリプトを読みに行くパス。
+    デフォルトは /WEB-INF/script 。
+    -->
+    <init-param>
+      <param-name>script_path</param-name>
+      <param-value>WEB-INF/script</param-value>
+    </init-param>
+
+    <!-- モジュール対応一覧：必須
+    書式は以下のよう。区切り文字前後の改行や空白はtrimで削除される。
+    (module name),(session fqcn),(option)[|(module name),(session fqcn),(option)]...
+    デフォルトではスクリプト実行モジュールが入っている。
+    -->
+    <init-param>
+      <param-name>modules</param-name>
+      <param-value>
+        sample,sample.SampleSessionFactory |
+        ajax_sample,sample.AjaxSampleSessionFactory
+      </param-value>
+    </init-param>
+
+  </servlet>
+
+  <!-- セッション開始の受付口 -->
+  <servlet-mapping>
+    <servlet-name>cont_servlet</servlet-name>
+    <url-pattern>/service/*</url-pattern>
+  </servlet-mapping>
+
+  <!-- 継続中セッションの受付口 -->
+  <servlet-mapping>
+    <servlet-name>cont_servlet</servlet-name>
+    <url-pattern>/session/*</url-pattern>
+  </servlet-mapping>
+
+</web-app>

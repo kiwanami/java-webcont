@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<project name="continuation" default="compile" basedir=".">
+
+  <property name="dest" value="webapp/WEB-INF/classes" />
+  <property name="libs" value="webapp/WEB-INF/lib" />
+
+  <path id="classpath">
+    <fileset dir="${libs}" includes="**/*.jar" />
+    <pathelement path="${dest}"/>
+  </path>
+
+  <target name="prepare">
+    <mkdir dir="${dest}" />
+    <copy todir="${dest}">
+      <fileset dir="src">
+	    <exclude name="**/*.java"/>
+	  </fileset>
+    </copy>
+  </target>
+
+  <target name="compile" depends="prepare">
+    <javac srcdir="src" destdir="${dest}" source="1.5" debug="true" encoding="UTF-8" deprecation="false">
+	  <classpath refid="classpath"/>
+    </javac>
+  </target>
+
+  <target name="test-sample" depends="compile">
+    <junit printsummary="yes" fork="true" haltonfailure="false">
+      <classpath>
+        <path refid="classpath"/>
+      </classpath>
+      <formatter type="plain"/>
+      <test name="sample.SampleSessionTest"/>
+    </junit>
+  </target>
+
+  <target name="clean">
+    <delete dir="${dest}"/>
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar jarfile="kiwanami-cont.jar" excludes="**/log4j.properties" basedir="${dest}">
+      <exclude name="**/sample/**"/>
+    </jar>
+  </target>
+
+  <target name="src">
+    <zip destfile="kiwanami-cont_src.zip" basedir="src" excludes="sample/*"/>
+  </target>
+
+</project>

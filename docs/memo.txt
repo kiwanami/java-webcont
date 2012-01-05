@@ -1,0 +1,95 @@
+Continuation 仕様メモ
+
+■方針
+
+・業務的な小規模（同時接続数百程度）をターゲット
+・スクリプト言語による開発をなるべくサポート
+　→Javaでも普通に開発できること
+・状態遷移モデルによる開発をサポート
+・Ajax、Cometなどの非同期通信をサポート
+
+・Model、Viewの面倒は見ない
+・S2も特別扱いしない
+
+■問題
+
+・セッション放置問題（ログアウト操作をしないで次々と新規ログインする）
+
+
+■ルーティング仕様
+
+○基本エントリールーティング
+
+セッション開始時に入るパス
+→セッション開始後は少し変わる
+
+・パス
+
+/(context path)/service/(module)/(option path)
+
+(module) := [A-Za-z0-9_\-\.]
+
+web.xmlで module と実装セッションクラスが決定される。
+モジュールが無ければエラー。
+"service"というパスもweb.xmlに書いてあるので変えることが出来る。
+
+・設定
+
+(module name),(session fqcn),(option)[|(module name),(session fqcn),(option)]...
+
+○スクリプト拡張
+
+・パス
+
+/(context path)/service/script/(script path)
+
+(script path) := (英数でパスになれるもの)
+
+「..」などは弾かれる
+
+scriptモジュールによって、スクリプトディレクトリからのパスが解決される。
+スクリプトディレクトリから上に行くことはできない。
+
+○セッション中ルーティング
+
+/(context path)/service/(session id)
+
+○割り込み（Ajax）拡張
+
+/(context path)/service/(session id)/ajax/(ajax handler name)
+
+(ajax handler name) := (英数でパスになれるもの)
+
+「ajax」に続いて後ろに指定されたパスがAjax受付用のイベントハンドラの名前になる。
+見つからない場合は「*」のワイルドカードハンドらがあれば実行される。
+
+■セキュリティー
+
+識別は session path と cookie の SESSION_ID との照合。
+hijackするには session path と cookie の両方の情報が必要。
+
+■暗黙変数
+
+_session_path : セッション中のパス。後ろの / を含まない。
+_session_key  : セッションのキー。session_pathに含まれている。
+
+■枝接続
+
+downloadなどのように、本質的にページ遷移が起きないような状況。
+本筋から分かれた JSP, servlet 等から、本筋の内部状態にアクセスしたいときに使う。
+各接続内で閉じたアクセス。
+
+String sessionKey = "_session_key"; //ServletやJSPにRequestなどで渡す
+CSUtils.bo(application,sessionKey,"(object key name)")
+
+■グローバル共有オブジェクト
+
+各接続で共有したいオブジェクトを管理。
+globalService
+
+CSUtils.go(application,"(object key name)")
+
+■テスト
+
+
+■デバッグ

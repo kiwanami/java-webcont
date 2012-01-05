@@ -1,0 +1,13 @@
+(jde-project-file-version "1.0")
+(jde-set-variables
+ '(jde-project-name "cont")
+ '(jde-global-classpath (quote ("./classes" "./lib")))
+ '(jde-run-working-directory "./")
+ '(jde-jdk (quote ("1.6.0")))
+ '(jde-debugger (quote ("JDEbug")))
+ '(jde-lib-directory-names (quote ("^lib" "^jar")))
+ '(jde-xref-store-prefixes (quote ("kiwanami")))
+ '(jde-sourcepath (quote ("./src")))
+ '(jde-run-application-class "")
+ '(jde-built-class-path (quote ("./classes")))
+ '(jde-project-context-switching-enabled-p nil))
